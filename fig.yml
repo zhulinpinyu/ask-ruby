@@ -1,0 +1,18 @@
+askDB:
+  image: zhulinpinyu/mongodb:latest
+  ports:
+    - 27017
+redis:
+  image: redis
+  ports:
+    - 6379
+web:
+  build: .
+  command: bundle exec unicorn -p 3000 -c ./config/unicorn.rb
+  volumes:
+    - .:/ask-ruby
+  ports:
+    - 3000:3000
+  links:
+    - askDB
+    - redis

@@ -1,5 +1,5 @@
 # encoding: UTF-8
-module Markdown
+
   module Render
     class HTML < MdEmoji::Render #Redcarpet::Render::HTML
       def block_code(code, language)
@@ -10,7 +10,3 @@ module Markdown
       end
     end
   end
-end
-
-
-

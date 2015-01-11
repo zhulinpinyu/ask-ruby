@@ -10,14 +10,14 @@ puts "Create Default Node"
 node = Node.where(name: 'default').first_or_create!
 
 puts "Create Admin Group Users"
-[:moderator, :admin, :owner].each do|name|
-  user = User.create(name: name, email: "#{name}@askrubyist.org", password: "11111111")
+[:moderator, :admin, :owner,:lixiang,:weijun].each do|name|
+  user = User.create(name: name, email: "#{name}@localgravity.com", password: "11111111")
   config = user.config_for(node)
   config.roles << name
   user.save
 end
 
-if Rails.env == "development"
+if Rails.env == "sdevelopment"
   puts "Load Test Development Users"
   100.times do
     User.create(name: Faker::NameCN.last_first, email: Faker::Internet.email, password: "11111111")

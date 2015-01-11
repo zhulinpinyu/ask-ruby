@@ -40,7 +40,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'bootstrap-sass'
+  gem 'bootstrap-sass', '~> 2.3.0.0'
   gem 'compass-rails'
   gem 'chosen-rails'
   gem 'jquery-fileupload-rails'
@@ -79,7 +79,7 @@ group :production do
 end
 
 gem 'unicorn'
-gem 'foreman'
+#gem 'foreman'
 
 group :development do
   gem 'capistrano'
