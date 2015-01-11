@@ -76,9 +76,10 @@ group :production do
 #  gem 'redis-store'
   gem 'redis-rails'
   # Use unicorn as the app server
-  gem 'unicorn'
-  
 end
+
+gem 'unicorn'
+gem 'foreman'
 
 group :development do
   gem 'capistrano'
